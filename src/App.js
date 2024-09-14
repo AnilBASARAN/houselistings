@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import './App.css';
+import PropertyItem from "./PropertyItem.jsx";
+import properties from "./properties.jsx";
+
+const App = () => {
+
+  const propertyItems = properties.map((property,index)=>
+    
+    <PropertyItem key={index} properties = {property} />
+                                       
+    );
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    <div className=" flex justify-center">
+    
+    <div className="flex flex-wrap justify-center w-full max-w-3xl p-2 m-6">
+      {propertyItems}
     </div>
+    
+    </div>
+    
   );
-}
+  
+};
 
 export default App;
